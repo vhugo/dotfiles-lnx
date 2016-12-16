@@ -11,4 +11,4 @@ source ~/.bin/git-status.bash
 
 export PATH=$PATH:~/.bin
 
-PROMPT_COMMAND='__git_status_ps1 \\e[38\;5\;237m\\u\\e\[38\;5\;66m@\\h\\e\[0m \\e\[38\;5\;93m\\W\\e\[0m'
+PROMPT_COMMAND='__git_status_ps1 \\e[38\;5\;237m\\u\\e\[38\;5\;61m@\\h\\e\[0m \\e\[38\;5\;93m\\W\\e\[0m'
