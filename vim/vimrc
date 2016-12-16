@@ -1,0 +1,38 @@
+scriptencoding utf-8
+set encoding=utf-8
+
+"=============================================================================
+"                                ~My vimrc~
+"=============================================================================
+" Author:        Victor Alves [http://vhugo.github.io]
+" Source:        https://github.com/vhugo/dotfiles-lnx
+"
+" My vimrc started as a copy of [Chris Toomey's][1] vimrc, and I'll improve it
+" as I get more confortable with vim in my workflow. All of my vimrc style
+" configurations into individual files organized by functionality. These
+" live in ~/.vim/rcfiles.
+"
+" I am using Vundle to manage my plugins, which is configured below
+" Each plugin is configured in its own file in ~/.vim/rcplugins
+"
+" [1]  https://github.com/christoomey/dotfiles "Chris Toomey"
+"-----------------------------------------------------------------------------
+
+" Want to set this before any others
+let mapleader = "\<Space>"
+
+function! s:SourceConfigFilesIn(directory)
+  let directory_splat = '~/.vim/' . a:directory . '/*'
+  for config_file in split(glob(directory_splat), '\n')
+    if filereadable(config_file)
+        execute 'source' config_file
+    endif
+  endfor
+endfunction
+
+filetype plugin indent on " required!
+syntax on
+
+" Vimrc is split accross multiple files, so loop over and source each
+"---------------------------------------------------------------------
+call s:SourceConfigFilesIn('rcfiles')

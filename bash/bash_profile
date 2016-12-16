@@ -1,0 +1,14 @@
+# loads existing bash_profile
+[[ -f ~/.bash_profile_previous ]] && source ~/.bash_profile_previous
+
+# load all my configs
+for bash_config in ~/.bash_config/*; do
+  source $bash_config
+done
+
+source ~/.bin/git-completion.bash
+source ~/.bin/git-status.bash
+
+export PATH=$PATH:~/.bin
+
+PROMPT_COMMAND='__git_status_ps1 \\e[38\;5\;237m\\u\\e\[38\;5\;66m@\\h\\e\[0m \\e\[38\;5\;93m\\W\\e\[0m'

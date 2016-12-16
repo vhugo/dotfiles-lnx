@@ -1,0 +1,11 @@
+# Unix
+alias ls="ls -la"
+alias l="ls -l"
+alias ll='ls -alFh'
+alias mkdir="mkdir -p"
+alias g="git"
+alias v="vim"
+
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
+
